@@ -10,5 +10,7 @@ jobs:
     name: Premier job
     runs-on : Ubuntu-latest
     steps:
-      - run : echo ${{if($environnement == prod) {return "prod"}}}
+      - name: testcondition
+        run: echo 'prod'
+        if : ${{github.event.inputs.environnement == 'prod'}}
   
