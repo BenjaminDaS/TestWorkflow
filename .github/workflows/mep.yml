@@ -10,7 +10,13 @@ jobs:
     name: Premier job
     runs-on : Ubuntu-latest
     steps:
-      - name: testcondition
-        run: echo 'prod'
+      - name : estProd
+        run : echo 'prod'
         if : ${{github.event.inputs.environnement == 'prod'}}
+      - name : estQual
+        run : echo 'qual'
+        if : ${{github.event.inputs.environnement == 'qual'}}
+      - name : estDev
+        run : echo 'dev'
+        if : ${{github.event.inputs.environnement == 'dev'}}
   
