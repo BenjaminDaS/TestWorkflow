@@ -14,7 +14,7 @@ jobs:
         run : echo 'prod'
         if : ${{github.event.inputs.environnement == 'prod'}}
       - name : estQual
-        run : echo 'qual'
+        run : ${{exit(1)}}
         if : ${{github.event.inputs.environnement == 'qual'}}
       - name : estDev
         run : echo 'dev'
