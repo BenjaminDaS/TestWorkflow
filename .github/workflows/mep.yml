@@ -21,4 +21,7 @@ jobs:
       - name : estDev
         run : echo 'dev'
         if : ${{github.event.inputs.environnement == 'dev'}}
+      - name : End workflow 
+        run: echo 'terminer'
+        if : always()
   
